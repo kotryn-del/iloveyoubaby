@@ -63,6 +63,43 @@ We're building our own paradise.,<br>
 
      <!-- New image -->
 <img src="third image.jpg">
+
+   
+    <h2>We’ve been together for:</h2>
+<p id="timeTogether" style="font-size: 20px; font-weight: bold; color: #ff4d79;"></p>
+
+<script>
+    function updateTimer() {
+        // Set the start date of your relationship (YYYY, MM (0-based), DD)
+        let startDate = new Date(2023, 10, 01); // Change to your actual date
+
+        // Get the current date
+        let now = new Date();
+
+        // Calculate the difference in milliseconds
+        let difference = now - startDate;
+
+        // Convert milliseconds to time units
+        let seconds = Math.floor(difference / 1000) % 60;
+        let minutes = Math.floor(difference / (1000 * 60)) % 60;
+        let hours = Math.floor(difference / (1000 * 60 * 60)) % 24;
+        let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        let years = Math.floor(days / 365);
+        let months = Math.floor((days % 365) / 30);
+        days = days % 30; // Remaining days after calculating months
+
+        // Display the timer
+        document.getElementById("timeTogether").innerHTML =
+            `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+        // Update every second
+        setTimeout(updateTimer, 1000);
+    }
+
+    // Start the timer when the page loads
+    updateTimer();
+</script>
+
       
 </body>
 </html>
