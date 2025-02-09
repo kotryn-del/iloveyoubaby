@@ -104,6 +104,19 @@ We're building our own paradise.,<br>
     Your browser does not support the audio element.
 </audio>
 
-      
+      <button onclick="showMessage()" style="background-color: #ff4d79; color: white; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;">
+    Click for a surprise ❤️
+</button>
+
+<p id="secretMessage" style="display: none; font-size: 20px; margin-top: 20px; color: #ff4d79;">
+    I love you more than words can ever say. Thank you for being my everything. 💖
+</p>
+
+<script>
+    function showMessage() {
+        document.getElementById("secretMessage").style.display = "block";
+    }
+</script>
+
 </body>
 </html>
