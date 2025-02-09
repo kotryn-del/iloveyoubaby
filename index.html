@@ -18,26 +18,6 @@
     }
 </style>
 
-<script>
-    function createHeart() {
-        let heart = document.createElement("div");
-        heart.innerHTML = "❤️";
-        heart.classList.add("heart");
-        document.body.appendChild(heart);
-
-        let startLeft = Math.random() * window.innerWidth;
-        let duration = Math.random() * 3 + 2; // 2 to 5 seconds
-        let size = Math.random() * 20 + 10; // 10px to 30px
-
-        heart.style.left = startLeft + "px";
-        heart.style.fontSize = size + "px";
-        heart.style.animationDuration = duration + "s";
-
-        setTimeout(() => heart.remove(), duration * 1000);
-    }
-
-    setInterval(createHeart, 300);
-</script>
 
         body {
             
