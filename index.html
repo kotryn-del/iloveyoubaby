@@ -18,8 +18,71 @@
             font-size: 18px;
             color: #333;
         }
+        
     </style>
 </head>
+    <style>
+    .card-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 100px;
+        height: 150px;
+        perspective: 1000px;
+        cursor: pointer;
+    }
+
+    .card-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+    }
+
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-front {
+        background: #ff4d79;
+        color: white;
+    }
+
+    .card-back {
+        background: white;
+        color: black;
+        transform: rotateY(180deg);
+    }
+
+    .special .card-back {
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        color: #ff4d79;
+        font-weight: bold;
+    }
+</style>
+
 <body>
     <h1>My Love for You</h1>
     <p>You are my sunshine, my moon, and all my stars. I love you endlessly. ❤️</p>
