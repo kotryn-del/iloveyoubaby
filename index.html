@@ -438,58 +438,22 @@ We're building our own paradise.,<br>
         animation: float 5s infinite;
     }
 
-    /* Big clickable blunt card */
-    .blunt-card {
-        width: 300px;
-        height: 400px;
-        background: green;
-        color: white;
+   <style>
+    .smoke-text {
         font-size: 24px;
         font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        cursor: pointer;
-        transition: 0.5s;
-        margin: 50px auto;
-    }
-
-    /* When clicked, it glows */
-    .lit {
-        background: darkgreen;
-        text-shadow: 0 0 15px limegreen, 0 0 30px green;
-    }
-
-    /* Hidden message style */
-    #loveMessage {
-        font-size: 28px;
-        color: white;
-        text-align: center;
-        margin-top: 20px;
+        color: green;
         opacity: 0;
-        transition: opacity 0.5s;
+        animation: smoke 3s ease-in-out forwards;
+    }
+
+    @keyframes smoke {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
 </style>
 
-<!-- Floating Smoke -->
-<div class="smoke">💨</div>
-
-<!-- Clickable Blunt Card -->
-<div class="blunt-card" onclick="lightUp(this)">🌿 Click to light up!</div>
-
-<!-- Hidden Love Message -->
-<p id="loveMessage">Love Is in the Air 💖</p>
-
-<script>
-    function lightUp(element) {
-        element.innerHTML = "🔥 You lit it up! 💕";
-        element.classList.add("lit");
-        document.getElementById("loveMessage").style.opacity = 1; // Show the message
-    }
-</script>
+<p class="smoke-text">Our love is like a slow burn... always high, never fading. 💨💚</p>
 
 
 </body>
