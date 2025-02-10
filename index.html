@@ -407,30 +407,6 @@ We're building our own paradise.,<br>
     }
 </style>
 
-<style>
-    .potion {
-        position: fixed;
-        bottom: 50px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 50px;
-        opacity: 0.5;
-        transition: transform 0.2s ease-out;
-    }
-
-    .potion.scrolled {
-        transform: scale(1.5);
-        opacity: 1;
-    }
-</style>
-
-<div class="potion">🍾</div>
-
-<script>
-    window.addEventListener('scroll', function() {
-        let potion = document.querySelector('.potion');
-        potion.classList.add('scrolled');
-    });
 </script>
 
 </body>
