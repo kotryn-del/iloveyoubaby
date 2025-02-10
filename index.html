@@ -336,5 +336,36 @@ We're building our own paradise.,<br>
     });
 </script>
 
+ <style>
+    .sparkle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background-color: #ff4d79;
+        border-radius: 50%;
+        opacity: 1;
+        animation: fadeOut 1s linear;
+        pointer-events: none;
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(2); }
+    }
+</style>
+
+<script>
+    document.addEventListener("mousemove", function(e) {
+        let sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        document.body.appendChild(sparkle);
+
+        sparkle.style.left = e.pageX + "px";
+        sparkle.style.top = e.pageY + "px";
+
+        setTimeout(() => sparkle.remove(), 1000);
+    });
+</script>
+
 </body>
 </html>
