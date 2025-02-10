@@ -18,200 +18,179 @@
             font-size: 18px;
             color: #333;
         }
-        
-    .card-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .card {
-        width: 100px;
-        height: 150px;
-        perspective: 1000px;
-        cursor: pointer;
-    }
-
-    .card-inner {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 1s;
-    }
-
-    .card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-
-    .card-front,
-    .card-back {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        font-weight: bold;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .card-front {
-        background: #ff4d79;
-        color: white;
-    }
-
-    .card-back {
-        background: white;
-        color: black;
-        transform: rotateY(180deg);
-    }
-
-    .special .card-back {
-        font-size: 14px;
-        text-align: center;
-        padding: 10px;
-        color: #ff4d79;
-        font-weight: bold;
-    }
-</style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            width: 100px;
+            height: 150px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card-front {
+            background: #ff4d79;
+            color: white;
+        }
+        .card-back {
+            background: white;
+            color: black;
+            transform: rotateY(180deg);
+        }
+        .special .card-back {
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+            color: #ff4d79;
+            font-weight: bold;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+    </style>
 </head>
 <body>
     <h1>My Love for You</h1>
     <p>You are my sunshine, my moon, and all my stars. I love you endlessly. ❤️</p>
-
-  <p>
-      your gaze is a novelty,<br>
-Your touch becomes my favourite melody,<br>
-On my arms, on my thighs, it writes poetry,<br>
-Take my breath, and never breathe out,<br>
-You're not someone i can live without,<br>
-My hands, my wounds, my quiet fears,<br>
-All of me is yours to keep,<br>
-Your hands, your wounds, your quiet fears,<br>
-We weave them into something deep,<br>
-My love, my dreams, my soul, my flaws,<br>
-All of me is all i give,<br>
-Your love, your dreams, your soul, your flaws,<br>
-Become foundation where i can safely build the walls,<br>
-With these walls i'll build us a home.,<br>
-Something much more greater Rome.,<br>
-A home where these walls don’t crack or sever,<br>
-A love that needs no doors..not ever.,<br>
-One home.,<br>
-Two hearts.,<br>
-Two souls.,<br>
-Four eyes.,<br>
-We're building our own paradise.,<br>
-      </p>
-     <p>
+    <p>
+        Your gaze is a novelty,<br>
+        Your touch becomes my favourite melody,<br>
+        On my arms, on my thighs, it writes poetry,<br>
+        Take my breath, and never breathe out,<br>
+        You're not someone I can live without,<br>
+        My hands, my wounds, my quiet fears,<br>
+        All of me is yours to keep,<br>
+        Your hands, your wounds, your quiet fears,<br>
+        We weave them into something deep,<br>
+        My love, my dreams, my soul, my flaws,<br>
+        All of me is all I give,<br>
+        Your love, your dreams, your soul, your flaws,<br>
+        Become foundation where I can safely build the walls,<br>
+        With these walls I'll build us a home,<br>
+        Something much more greater than Rome,<br>
+        A home where these walls don’t crack or sever,<br>
+        A love that needs no doors...not ever,<br>
+        One home,<br>
+        Two hearts,<br>
+        Two souls,<br>
+        Four eyes,<br>
+        We're building our own paradise.<br>
+    </p>
+    <p>
         Together we will wander,<br>
         Hand in hand, heart in heart,<br>
         Forever intertwined,<br>
         Never to be apart.
     </p>
     
- <img src="myimage.jpg">
+    <img src="myimage.jpg" alt="First Image">
+    <img src="second_image.jpg" alt="Second Image">
+    <img src="third_image.jpg" alt="Third Image">
 
-    <!-- New image -->
- <img src="second image.jpg">
-
-     <!-- New image -->
-<img src="third image.jpg">
-
-   
     <h2>We’ve been together for:</h2>
-<p id="timeTogether" style="font-size: 20px; font-weight: bold; color: #ff4d79;"></p>
+    <p id="timeTogether" style="font-size: 20px; font-weight: bold; color: #ff4d79;"></p>
 
-<script>
-    function updateTimer() {
-        // Set the start date of your relationship (YYYY, MM (0-based), DD)
-        let startDate = new Date(2023, 10, 01); // Change to your actual date
+    <script>
+        function updateTimer() {
+            // Set the start date of your relationship (YYYY, MM (0-based), DD)
+            let startDate = new Date(2023, 10, 01); // Change to your actual date
 
-        // Get the current date
-        let now = new Date();
+            // Get the current date
+            let now = new Date();
 
-        // Calculate the difference in milliseconds
-        let difference = now - startDate;
+            // Calculate the difference in milliseconds
+            let difference = now - startDate;
 
-        // Convert milliseconds to time units
-        let seconds = Math.floor(difference / 1000) % 60;
-        let minutes = Math.floor(difference / (1000 * 60)) % 60;
-        let hours = Math.floor(difference / (1000 * 60 * 60)) % 24;
-        let days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        let years = Math.floor(days / 365);
-        let months = Math.floor((days % 365) / 30);
-        days = days % 30; // Remaining days after calculating months
+            // Convert milliseconds to time units
+            let seconds = Math.floor(difference / 1000) % 60;
+            let minutes = Math.floor(difference / (1000 * 60)) % 60;
+            let hours = Math.floor(difference / (1000 * 60 * 60)) % 24;
+            let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            let years = Math.floor(days / 365);
+            let months = Math.floor((days % 365) / 30);
+            days = days % 30; // Remaining days after calculating months
 
-        // Display the timer
-        document.getElementById("timeTogether").innerHTML =
-            `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            // Display the timer
+            document.getElementById("timeTogether").innerHTML =
+                `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 
-        // Update every second
-        setTimeout(updateTimer, 1000);
-    }
+            // Update every second
+            setTimeout(updateTimer, 1000);
+        }
 
-    // Start the timer when the page loads
-    updateTimer();
-</script>
+        // Start the timer when the page loads
+        updateTimer();
+    </script>
 
     <audio autoplay loop>
-    <source src="ZAYN & Sia - Dusk Till Dawn (Lyrics) (1).mp3">
-    Your browser does not support the audio element.
-</audio>
+        <source src="ZAYN & Sia - Dusk Till Dawn (Lyrics) (1).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-      <button onclick="showMessage()" style="background-color: #ff4d79; color: white; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;">
-    Click for a surprise ❤️
-</button>
+    <button onclick="showMessage()" style="background-color: #ff4d79; color: white; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;">
+        Click for a surprise ❤️
+    </button>
 
-<p id="secretMessage" style="display: none; font-size: 20px; margin-top: 20px; color: #ff4d79;">
-    I love you more than words can ever say. Thank you for being my everything. 💖
-</p>
+    <p id="secretMessage" style="display: none; font-size: 20px; margin-top: 20px; color: #ff4d79;">
+        I love you more than words can ever say. Thank you for being my everything. 💖
+    </p>
 
-<script>
-    function showMessage() {
-        document.getElementById("secretMessage").style.display = "block";
-    }
-</script>
+    <script>
+        function showMessage() {
+            document.getElementById("secretMessage").style.display = "block";
+        }
 
-<style>
-    @keyframes fall {
-        0% { transform: translateY(-100vh); opacity: 1; }
-        100% { transform: translateY(100vh); opacity: 0; }
-    }
-    .heart {
-        position: absolute;
-        color: red;
-        font-size: 20px;
-        animation: fall linear infinite;
-    }
-</style>
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
 
-<script>
-    function createHeart() {
-        let heart = document.createElement("div");
-        heart.innerHTML = "❤️";
-        heart.classList.add("heart");
-        document.body.appendChild(heart);
+            let startLeft = Math.random() * window.innerWidth;
+            let duration = Math.random() * 3 + 2; // 2 to 5 seconds
+            let size = Math.random() * 20 + 10; // 10px to 30px
 
-        let startLeft = Math.random() * window.innerWidth;
-        let duration = Math.random() * 3 + 2; // 2 to 5 seconds
-        let size = Math.random() * 20 + 10; // 10px to 30px
+            heart.style.left = startLeft + "px";
+            heart.style.fontSize = size + "px";
+            heart.style.animationDuration = duration + "s";
 
-        heart.style.left = startLeft + "px";
-        heart.style.fontSize = size + "px";
-        heart.style.animationDuration = duration + "s";
+            setTimeout(() => heart.remove(), duration * 1000);
+        }
 
-        setTimeout(() => heart.remove(), duration * 1000);
-    }
-
-    setInterval(createHeart, 300);
-</script>
-
-
+        setInterval(createHeart, 300);
+    </script>
 </body>
 </html>
