@@ -407,35 +407,31 @@ We're building our own paradise.,<br>
     }
 </style>
 
-<!-- Script for Scroll Effect -->
-<script>
-    window.addEventListener("scroll", function() {
-        let flowerContainer = document.querySelector(".flower-container");
-        let scrollPosition = window.scrollY + window.innerHeight;
-        let triggerPoint = document.body.offsetHeight - 100;
-
-        if (scrollPosition > triggerPoint) {
-            flowerContainer.classList.add("show-flowers");
-        }
-    });
-</script>
-
- <style>
-    @keyframes roll {
-        0% { transform: translateX(-100px) rotate(0deg); }
-        100% { transform: translateX(100vw) rotate(360deg); }
+<style>
+    .potion {
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 50px;
+        opacity: 0.5;
+        transition: transform 0.2s ease-out;
     }
 
-    .rolling-leaf {
-        position: absolute;
-        top: 20%;
-        left: 0;
-        font-size: 50px;
-        animation: roll 10s linear infinite;
+    .potion.scrolled {
+        transform: scale(1.5);
+        opacity: 1;
     }
 </style>
 
-<div class="rolling-leaf">🌿</div>
+<div class="potion">🍾</div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        let potion = document.querySelector('.potion');
+        potion.classList.add('scrolled');
+    });
+</script>
 
 </body>
 </html>
