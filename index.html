@@ -409,6 +409,78 @@ We're building our own paradise.,<br>
 
 </script>
 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationship Question</title>
+    <style>
+        .response {
+            display: none; /* Hide response elements initially */
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .emoji {
+            font-size: 50px; /* Size for emojis */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Do you want to continue this relationship?</h1>
+<button onclick="showResponse('yes')">Yes</button>
+<button onclick="showResponse('no')">No</button>
+
+<div id="response1" class="response">
+    <p id="message1"></p>
+    <div id="emoji1" class="emoji"></div>
+</div>
+
+<div id="response2" class="response">
+    <h2>Do you promise to stay with me because you love me and not because you don't want to hurt me?</h2>
+    <button onclick="showFinalResponse('yes')">Yes</button>
+    <button onclick="showFinalResponse('no')">No</button>
+    <div id="message2"></div>
+    <div id="emoji2" class="emoji"></div>
+</div>
+
+<script>
+    function showResponse(answer) {
+        const response1 = document.getElementById('response1');
+        const message1 = document.getElementById('message1');
+        const emoji1 = document.getElementById('emoji1');
+        const response2 = document.getElementById('response2');
+
+        response1.style.display = 'block'; // Show the first response
+
+        if (answer === 'yes') {
+            message1.innerText = "Great! Let's take the next step.";
+            response2.style.display = 'block'; // Show the second question
+        } else {
+            message1.innerText = "I'm sad to hear that.";
+            emoji1.innerText = "😢"; // Sad emoji
+        }
+    }
+
+    function showFinalResponse(answer) {
+        const message2 = document.getElementById('message2');
+        const emoji2 = document.getElementById('emoji2');
+
+        if (answer === 'yes') {
+            message2.innerText = "Thank you for your love!";
+            emoji2.innerText = "😊"; // Happy emoji
+        } else {
+            message2.innerText = "That's not what I hoped for...";
+            emoji2.innerText = "😔"; // Sad emoji
+        }
+    }
+</script>
+
+</body>
+</html>
+
 </body>
 </html>
 
