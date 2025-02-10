@@ -421,40 +421,21 @@ We're building our own paradise.,<br>
 </script>
 
  <style>
-    /* Floating smoke animation */
-    @keyframes float {
-        0% { opacity: 0.1; transform: translateY(0); }
-        50% { opacity: 0.5; transform: translateY(-10px); }
-        100% { opacity: 0.1; transform: translateY(0); }
+    @keyframes roll {
+        0% { transform: translateX(-100px) rotate(0deg); }
+        100% { transform: translateX(100vw) rotate(360deg); }
     }
 
-    .smoke {
-        position: fixed;
-        top: 10%;
-        left: 50%;
+    .rolling-leaf {
+        position: absolute;
+        top: 20%;
+        left: 0;
         font-size: 50px;
-        color: gray;
-        opacity: 0.1;
-        animation: float 5s infinite;
-    }
-
-   <style>
-    .smoke-text {
-        font-size: 24px;
-        font-weight: bold;
-        color: green;
-        opacity: 0;
-        animation: smoke 3s ease-in-out forwards;
-    }
-
-    @keyframes smoke {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
+        animation: roll 10s linear infinite;
     }
 </style>
 
-<p class="smoke-text">Our love is like a slow burn... always high, never fading. 💨💚</p>
-
+<div class="rolling-leaf">🌿</div>
 
 </body>
 </html>
